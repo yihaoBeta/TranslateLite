@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/fragment_collection"
+          android:title="@string/menu_collection"/>
+    <item android:id="@+id/fragment_voice_role"
+          android:title="@string/menu_role"/>
+    <group android:id="@+id/group" android:menuCategory="secondary">
+        <item android:id="@+id/fragment_about"
+              android:title="@string/menu_about"/>
+    </group>
+</menu>

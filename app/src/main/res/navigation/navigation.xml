@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
+            app:startDestination="@id/fragment_trans_main">
+    <fragment
+            android:id="@+id/fragment_trans_main"
+            android:label="@string/app_name_zh"
+            android:name="com.beta.yihao.translite.ui.TransMainFragment"
+            tools:layout="@layout/fragment_main_layout">
+        <action app:destination="@id/fragment_collection"
+                android:id="@+id/main_to_collection"
+                app:enterAnim="@anim/slide_in_right"
+                app:exitAnim="@anim/slide_out_left"
+                app:popEnterAnim="@anim/slide_in_left"
+                app:popExitAnim="@anim/slide_out_right"/>
+
+        <action app:destination="@id/fragment_lang"
+                android:id="@+id/main_to_language"
+                app:enterAnim="@anim/slide_in_down"
+                app:exitAnim="@anim/slide_out_up"
+                app:popExitAnim="@anim/slide_out_down"
+                app:popEnterAnim="@anim/slide_in_up"
+        />
+    </fragment>
+    <fragment android:id="@+id/fragment_collection"
+              android:label="@string/label_collection"
+              android:name="com.beta.yihao.translite.ui.CollectionFragment"
+              tools:layout="@layout/fragment_collection_layout">
+        <action app:destination="@id/fragment_collect_detail"
+                android:id="@+id/collect_to_detail"
+                app:enterAnim="@anim/slide_in_right"
+                app:exitAnim="@anim/slide_out_left"
+                app:popEnterAnim="@anim/slide_in_left"
+                app:popExitAnim="@anim/slide_out_right"/>
+    </fragment>
+
+    <fragment android:id="@+id/fragment_collect_detail"
+              android:label="@string/label_detail"
+              android:name="com.beta.yihao.translite.ui.CollectionDetailFragment"
+              tools:layout="@layout/fragment_collect_detail_layout"
+    >
+        <argument android:name="id"
+                  app:argType="string"/>
+
+    </fragment>
+    <fragment android:name="com.beta.yihao.translite.ui.LanguageFragment"
+              android:id="@+id/fragment_lang"
+              android:label="@string/label_choice"
+              tools:layout="@layout/language_layout">
+        <argument android:name="isSource"
+                  app:argType="boolean"/>
+    </fragment>
+
+    <fragment android:name="com.beta.yihao.translite.ui.VoiceRoleFragment"
+              android:id="@+id/fragment_voice_role"
+              android:label="@string/label_choice_role"
+              tools:layout="@layout/fragment_voice_role_layout">
+    </fragment>
+
+    <fragment android:name="com.beta.yihao.translite.ui.AboutFragment"
+              android:label="@string/label_about"
+              tools:layout="@layout/fragment_about_layout"
+              android:id="@+id/fragment_about"
+    />
+</navigation>

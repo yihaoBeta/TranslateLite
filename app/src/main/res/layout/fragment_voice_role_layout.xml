@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+        <RadioGroup
+                android:id="@+id/voice_group"
+                android:layout_margin="10dp"
+                android:padding="10dp"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+            <RadioButton
+                    android:text="@string/normal_female"
+                    android:padding="10dp"
+                    android:textSize="20sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/voiceMode0"
+                    android:layout_weight="1"/>
+            <RadioButton
+                    android:text="@string/normal_male"
+                    android:padding="10dp"
+                    android:textSize="20sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/voiceMode1"
+                    android:layout_weight="1"/>
+            <RadioButton
+                    android:text="@string/sp_male"
+                    android:padding="10dp"
+                    android:textSize="20sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/voiceMode2"
+                    android:layout_weight="1"/>
+            <RadioButton
+                    android:text="@string/male_dxy"
+                    android:padding="10dp"
+                    android:textSize="20sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/voiceMode3"
+                    android:layout_weight="1"/>
+            <RadioButton
+                    android:text="@string/child_dyy"
+                    android:padding="10dp"
+                    android:textSize="20sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/voiceMode4"
+                    android:layout_weight="1"/>
+        </RadioGroup>
+    </RelativeLayout>
+</layout>

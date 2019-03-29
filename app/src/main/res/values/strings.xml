@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">TransLite</string>
+    <string name="collect_date">"收藏于:%s"</string>
+    <string name="menu_about">关于</string>
+    <string name="menu_role">设置发声人</string>
+    <string name="menu_collection">收藏</string>
+    <string name="app_name_zh">轻译</string>
+    <string name="label_collection">收藏</string>
+    <string name="label_detail">详情</string>
+    <string name="label_choice">请选择</string>
+    <string name="label_choice_role">请选择发声角色</string>
+    <string name="label_about">关于</string>
+    <string name="description">一个轻量级的翻译工具</string>
+    <string name="normal_female">普通女声</string>
+    <string name="normal_male">普通男声</string>
+    <string name="sp_male">特别男声</string>
+    <string name="male_dxy">情感男声-度逍遥</string>
+    <string name="child_dyy">情感儿童声-度丫丫</string>
+    <string name="speak_it">朗读词条</string>
+    <string name="long_press_to_speak">长按录入</string>
+    <string name="collect_it">收藏词条</string>
+    <string name="input_text_hint">请输入要翻译的文本</string>
+    <string name="not_find_text_to_tts">没有找到可朗读的文本</string>
+    <string name="error_retry">朗读出错,请稍后重试</string>
+    <string name="not_support">不支持当前语言的朗读</string>
+    <string name="collect_success">收藏成功</string>
+    <string name="collect_fail">收藏失败</string>
+    <string name="collect_cancel">已取消收藏</string>
+    <string name="recognize_error">识别出错</string>
+    <string name="description_permission">必须授权相关权限才能使用,现在去申请？</string>
+    <string name="press_once_more">再按一次退出程序</string>
+    <string name="delete_it">确定删除吗？</string>
+    <string name="ok">确定</string>
+    <string name="cancel">取消</string>
+</resources>

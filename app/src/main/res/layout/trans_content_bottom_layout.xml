@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable name="eventHandler" type="com.beta.yihao.translite.ui.TransMainFragmentEventHandler"/>
+        <variable name="isSpeaking" type="Boolean"/>
+        <variable name="isCollected" type="Boolean"/>
+    </data>
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:baselineAligned="false"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
+        <LinearLayout
+                android:id="@+id/mReadIt"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:clickable="true"
+                android:gravity="center"
+                android:onClick="@{eventHandler::handleReadBtn}"
+                android:orientation="vertical">
+
+            <ImageView
+                    android:id="@+id/icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:clickable="false"
+                    android:scaleType="fitCenter"
+                    app:isSpeaking="@{isSpeaking}"
+                    android:src="@mipmap/speak"/>
+
+            <TextView
+                    android:id="@+id/text"
+                    app:isSpeaking="@{isSpeaking}"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:clickable="false"
+                    android:text="@string/speak_it"/>
+        </LinearLayout>
+
+
+        <LinearLayout
+                android:id="@+id/mRecognizeBtn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:clickable="true"
+                android:gravity="center"
+                android:orientation="vertical">
+
+            <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:clickable="false"
+                    android:scaleType="fitCenter"
+                    android:src="@mipmap/voice"/>
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:clickable="false"
+                    android:text="@string/long_press_to_speak"/>
+        </LinearLayout>
+
+        <LinearLayout
+                android:id="@+id/mCollectButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:clickable="true"
+                android:onClick="@{eventHandler::handleCollectBtn}"
+                android:orientation="vertical">
+
+            <ImageView
+                    android:id="@+id/collectionImageView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    app:isCollected="@{isCollected}"
+                    android:scaleType="fitCenter"
+                    android:src="@mipmap/collect"/>
+
+            <TextView
+                    android:id="@+id/collectionTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:isCollected="@{isCollected}"
+                    android:text="@string/collect_it"/>
+        </LinearLayout>
+
+    </LinearLayout>
+</layout>

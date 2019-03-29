@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable name="eventHandler" type="com.beta.yihao.translite.ui.CollectionFragmentEventHandler"/>
+        <variable name="collectionDetail"
+                  type="com.beta.yihao.translite.data.entity.TranslateEntity"/>
+        <variable name="isCollect" type="Boolean"/>
+        <variable name="sourceLangId" type="String"/>
+        <variable name="targetLangId" type="String"/>
+        <variable name="isSourceSpeaking" type="Boolean"/>
+        <variable name="isTargetSpeaking" type="Boolean"/>
+    </data>
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+            <TextView
+                    android:id="@+id/detailDateTv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#55b7b2b2"
+                    android:padding="10dp"
+                    app:date="@{collectionDetail.date}"
+                    android:textSize="15sp"/>
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="10dp">
+
+                    <TextView
+                            android:id="@+id/detailSourceLangTv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@{collectionDetail.sourLang.name}"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="20sp"/>
+
+                    <ImageButton
+                            android:id="@+id/detailSourceSpeakBtn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="10dp"
+                            app:isSupportTts="@{sourceLangId}"
+                            app:isSpeaking="@{isSourceSpeaking}"
+                            android:onClick="@{eventHandler.handleSourceSpeak}"
+                            android:background="@color/transparent"
+                            android:scaleType="fitStart"
+                            android:src="@mipmap/speak"/>
+                </LinearLayout>
+
+                <ScrollView
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1">
+
+                    <TextView
+                            android:id="@+id/detailSourceTv"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/colorPrimary"
+                            android:padding="15dp"
+                            android:text="@{collectionDetail.sourceText}"
+                            android:textColor="@color/white"
+                            android:textSize="20sp"/>
+                </ScrollView>
+
+                <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="10dp">
+
+                    <TextView
+                            android:id="@+id/detailTargetLangTv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@{collectionDetail.targetLang.name}"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="20sp"/>
+
+                    <ImageButton
+                            android:id="@+id/detailTargetSpeakBtn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="10dp"
+                            app:isSupportTts="@{targetLangId}"
+                            app:isSpeaking="@{isTargetSpeaking}"
+                            android:onClick="@{eventHandler.handleTargetSpeak}"
+                            android:background="@color/transparent"
+                            android:scaleType="fitStart"
+                            android:src="@mipmap/speak"/>
+                </LinearLayout>
+
+                <ScrollView
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1">
+
+                    <TextView
+                            android:id="@+id/detailTargetTv"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/colorPrimary"
+                            android:padding="15dp"
+                            android:text="@{collectionDetail.transText}"
+                            android:textColor="@color/white"
+                            android:textSize="20sp"/>
+                </ScrollView>
+            </LinearLayout>
+        </LinearLayout>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/fab_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_margin="10dp"
+                android:onClick="@{eventHandler.handleFabButtonClick}"
+                app:isCollected="@{isCollect}"
+                android:src="@mipmap/collected"
+                app:backgroundTint="@color/colorPrimary"
+                app:elevation="30dp"
+                app:fabSize="mini"
+                app:pressedTranslationZ="10dp"
+                app:rippleColor="@color/colorAccent"/>
+    </RelativeLayout>
+</layout>
